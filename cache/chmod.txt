@@ -1,0 +1,1 @@
+sometime you must set cache directory chmod to 777
