@@ -1,12 +1,12 @@
 <?php
 //cache class
 class ccc_cache {
-	var $cacheDir = "./cache/";
-	var $cacheTime = 300;
+	var $cacheDir = "./cache/"; //default cache directory
+	var $cacheTime = 300; // cache seconds minutes*60
 	var $caching = false;
 	var $cacheFile;
 	var $cacheFileName;
-	var $cacheLoggedInKey = "wordpress_logged_in";
+	var $cacheLoggedInKey = "wordpress_logged_in"; //wordpress logged in cookie key 
 	var $cacheLoggedIn = false;
 	
 	function __construct(){
