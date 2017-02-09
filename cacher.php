@@ -3,6 +3,7 @@
 class ccc_cache {
 	var $cacheDir = "./cache/"; //default cache directory
 	var $cacheTime = 300; // cache seconds minutes*60
+	var $cacheActive = true; // cache control 
 	var $caching = false;
 	var $cacheFile;
 	var $cacheFileName;
@@ -25,7 +26,7 @@ class ccc_cache {
 	}
 	
 	function start(){
-			if(file_exists($this->cacheFileName) && (time() - filemtime($this->cacheFileName)) < $this->cacheTime && !$this->cacheLoggedIn){
+			if(file_exists($this->cacheFileName) && (time() - filemtime($this->cacheFileName)) < $this->cacheTime && !$this->cacheLoggedIn && $this->cacheActive){
 				$this->caching = false;
 				echo file_get_contents($this->cacheFileName);
 				exit();
@@ -36,7 +37,7 @@ class ccc_cache {
 	}
 	
 	function end(){
-		if($this->caching && !$this->cacheLoggedIn){
+		if($this->caching && !$this->cacheLoggedIn && $this->cacheActive){
 			file_put_contents($this->cacheFileName,ob_get_contents().'<!-- Cache Time: '.date("d.m.Y H:i:s").'-->');
 			@ob_end_flush();
 		}
