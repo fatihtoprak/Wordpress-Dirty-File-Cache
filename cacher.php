@@ -1,4 +1,5 @@
 <?php
+//cache class
 class ccc_cache {
 	var $cacheDir = "./cache/";
 	var $cacheTime = 300;
