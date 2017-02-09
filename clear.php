@@ -14,9 +14,9 @@ function wp_login_check(){
 	}
 	return $cacheLoggedIn;
 }
-if($cacheLoggedIn){
+if(wp_login_check()){
 	if(isset($_POST['delete'])){
-		$filez = glob('./cache/*.'.$_SERVER['SERVER_NAME']);
+		$filez = glob('./cache/*'.$_SERVER['SERVER_NAME']);
 		$count = count($filez);
 		if($count>0 && !empty($filez)){
 			foreach($filez as $f){
