@@ -1,4 +1,5 @@
 <?php
+//wordpress index file
 include('cacher.php');
 $ccc_cache = new ccc_cache();
 $ccc_cache->start();
