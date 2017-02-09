@@ -23,7 +23,7 @@ if($cacheLoggedIn){
 				unlink($f);
 			}
 		}
-		echo $count.' file deleted';
+		echo $count.' file(s) deleted';
 		echo '<script>setTimeout(function(){ window.history.back(); },3500); </script>';
 	}else{
 		echo '
